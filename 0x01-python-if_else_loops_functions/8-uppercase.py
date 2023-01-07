@@ -6,4 +6,3 @@ def uppercase(str):
         else:
             dif = 0
         print('{:c}'.format(ord(str[word] - dif), end="")
-              print()
