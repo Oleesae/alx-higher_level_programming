@@ -13,5 +13,3 @@ def uppercase(str):
         i += 1
     else:
         print()
-                
-
