@@ -1,4 +1,4 @@
-#!/usr/bin/pythona3
+#!/usr/bin/python3
 """A Square class."""
 
 
