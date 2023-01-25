@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/pythona3
 """A Square class."""
 
 
@@ -34,6 +34,13 @@ class Square:
 
     @size.setter
     def size(self, value):
+        """
+        Private instance setter
+
+        Args:
+            value: size of the square
+        """
+
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
 
