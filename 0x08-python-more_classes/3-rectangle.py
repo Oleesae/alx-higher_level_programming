@@ -63,4 +63,18 @@ class Rectangle:
         else:
             return 2 * (self.__width + self.__height)
 
-    
+    def __str__(self):
+        """
+        Prints the Rectangle
+        """
+        string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
+
+        for w in range(self.__height):
+            for h in range(self.__width):
+                string += "#"
+            if w != self.__height - 1:
+                string += "\n"
+
+        return string
