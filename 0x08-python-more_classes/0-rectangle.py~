@@ -3,7 +3,6 @@
 A Rectangle Class
 """
 
-
 class Rectangle:
     """
     A Rectangle Object
