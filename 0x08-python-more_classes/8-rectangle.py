@@ -82,7 +82,7 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
-        return rect_2        
+        return rect_2
 
     def __str__(self):
         """
@@ -109,4 +109,3 @@ class Rectangle:
     def __del__(self):
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
-
