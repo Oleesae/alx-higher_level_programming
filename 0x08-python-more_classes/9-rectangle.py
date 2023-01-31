@@ -93,7 +93,7 @@ class Rectangle:
             size: value of new rectangle object
         """
         return cls(size, size)
-        
+
     def __str__(self):
         """
         Prints the Rectangle
