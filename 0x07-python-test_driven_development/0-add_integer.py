@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""0-add_integer.py"""
+"""
+Adds two integers
+add_integer(a, b)
+    returns sum of a and b
+"""
 
 
 def add_integer(a, b=98):
