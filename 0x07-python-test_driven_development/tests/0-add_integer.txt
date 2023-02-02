@@ -17,16 +17,15 @@ Missing values:
     >>> add_integer(7.3)
     105
 
-Both values:
+    >>> add_integer(100, -2)
+    98
 
-     >>> add_integer(28, 14.8)
-     42
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
 
-     >>> add_integer(83.2, 12.7)
-     95
-
-     >>> add_integer(34.6, 57)
-     91
+    >>> add_integer(34.6, 57)
+    91
 
 Wrong values:
 
