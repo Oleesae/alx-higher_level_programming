@@ -19,15 +19,17 @@ def matrix_divided(matrix, div):
 
     if not isinstance(matrix, list):
         raise TypeError("matrix must be a list")
-    if not all(isinstance(elem, list) for elem in matrix):
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats")
 
+    check = 1
     for elem in matrix:
+        if not isinstance(elem, list):
+            check *= 0
         for num in elem:
             if not isinstance(num, (float, int)):
-                raise TypeError(
-                    "matrix must be a matrix (list of lists) of integers/floats")
+                check *= 0
+    if check < 1:
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
 
     for i in range(len(matrix)-1):
         if len(matrix[i]) != len(matrix[i+1]):
