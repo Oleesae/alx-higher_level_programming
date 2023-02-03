@@ -27,3 +27,7 @@ ValueError: size must be >= 0
 
 >>> print_square(0)
 <BLANKLINE>
+
+>>> print_square(NaN)
+Traceback (most recent call last):
+NameError: name 'NaN' is not defined
