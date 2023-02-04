@@ -25,4 +25,4 @@ def print_square(size):
             print("#", end="")
         if row != size - 1:
             print()
-    print()
+    return
