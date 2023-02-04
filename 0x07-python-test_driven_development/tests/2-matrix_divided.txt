@@ -43,3 +43,6 @@ TypeError: matrix_divided() missing 1 required positional argument: 'div'
 >>> matrix_divided()
 Traceback (most recent call last):
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+>>> matrix_divided([[4, 8, 2]], 33432.23)
+[[0.0, 0.0, 0.0]]
