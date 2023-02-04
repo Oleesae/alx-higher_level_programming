@@ -35,4 +35,6 @@ NameError: name 'NaN' is not defined
 Traceback (most recent call last):
 TypeError: print_square() missing 1 required positional argument: 'size'
 
-
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
