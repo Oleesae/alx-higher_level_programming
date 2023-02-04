@@ -12,6 +12,7 @@ def text_indentation(text):
     after each '.' '?' and ':'
     """
 
+    flag = False
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for i, c in enumerate(text):
