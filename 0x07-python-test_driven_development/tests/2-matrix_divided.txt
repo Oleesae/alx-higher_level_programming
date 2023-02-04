@@ -30,3 +30,16 @@ Traceback (most recent call last):
 	  ...
 TypeError: div must be a number
 
+>>> matrix_divided([[3]], 3)
+[[1.0]]
+
+>>> matrix_divided([[3]], 3.2)
+[[0.94]]
+
+>>> matrix_divided([[3]])
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
