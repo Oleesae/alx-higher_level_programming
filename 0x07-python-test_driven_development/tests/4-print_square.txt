@@ -26,7 +26,7 @@ Traceback (most recent call last):
 ValueError: size must be >= 0
 
 >>> print_square(0)
-
+<BLANKLINE>
 
 >>> print_square(NaN)
 Traceback (most recent call last):
@@ -35,3 +35,5 @@ NameError: name 'NaN' is not defined
 >>> print_square()
 Traceback (most recent call last):
 TypeError: print_square() missing 1 required positional argument: 'size'
+
+
