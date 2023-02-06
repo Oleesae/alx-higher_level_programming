@@ -4,6 +4,7 @@ A lookup module
 
 """
 
+
 def lookup(obj):
     """ obj -> list
 
