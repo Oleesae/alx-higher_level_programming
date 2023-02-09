@@ -9,7 +9,7 @@ class MyList(list):
     """
     A MyList class
     A subclass of list
-    
+
     """
 
     def __init__(self):
