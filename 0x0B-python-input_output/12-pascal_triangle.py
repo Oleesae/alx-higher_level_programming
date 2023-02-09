@@ -25,4 +25,4 @@ def pascal_triangle(n: int) -> "list | list[list[int]]":
         tri.append([1] + [
             tri[x][y] + tri[x][y + 1] for y in range(x)
         ] + [1])
-        return tri
+    return tri
