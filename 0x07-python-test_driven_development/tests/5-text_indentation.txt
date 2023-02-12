@@ -41,7 +41,7 @@ Boy?
 <BLANKLINE>
 
 >>> text_indentation('')
-<BLANKLINE>
+
 >>> text_indentation(True)
 Traceback (most recent call last):
 TypeError: text must be a string
