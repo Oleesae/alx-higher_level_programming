@@ -23,6 +23,5 @@ def print_square(size):
     for row in range(size):
         for col in range(size):
             print("#", end="")
-        if row != size - 1:
-            print()
+        print()
     print()

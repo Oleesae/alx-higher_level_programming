@@ -12,7 +12,7 @@ Importing function from the module:
 ####
 ####
 ####
-
+<BLANKLINE>
 >>> print_square("4")
 Traceback (most recent call last):
 TypeError: size must be an integer
@@ -26,7 +26,7 @@ Traceback (most recent call last):
 ValueError: size must be >= 0
 
 >>> print_square(0)
-
+<BLANKLINE>
 >>> print_square(NaN)
 Traceback (most recent call last):
 NameError: name 'NaN' is not defined
