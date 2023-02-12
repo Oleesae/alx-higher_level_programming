@@ -14,6 +14,7 @@ def text_indentation(text):
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    flag = True
     for i, c in enumerate(text):
         if c != ' ':
             flag = True
