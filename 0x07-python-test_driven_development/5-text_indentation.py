@@ -23,5 +23,5 @@ def text_indentation(text):
             flag = False
         elif flag:
             print(c, end="")
-    if flag == False:
+    if flag is False:
         print()
