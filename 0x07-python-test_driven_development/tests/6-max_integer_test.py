@@ -46,3 +46,43 @@ class TestMaxInteger(unittest.TestCase):
 
         value = max_integer([5, 87, 22, 94, 23, 23,41])
         self.assertEqual(value, 94)
+    
+    def test_one_value(self):
+        """
+        checks in a list of one value
+
+        Returns the largest value
+        """
+
+        value = max_integer([5])
+        self.assertEqual(value, 5)
+
+    def test_negative_values(self):
+        """
+        checks in a list of negative values
+
+        Returns the largest value
+        """
+
+        value = max_integer([-5, -34, -1, -75, -4, -33])
+        self.assertEqual(value, -1)
+
+    def test_one_negative_value(self):
+        """
+        checks in a list of one negative values
+
+        Returns the largest value
+        """
+
+        value = max_integer([-5, 34, 1, 75, 4, 33])
+        self.assertEqual(value, 75)
+
+    def test_max_beginning(self):
+        """
+        checks in a list of values
+
+        Returns the largest value
+        """
+
+        value = max_integer([95, 34, 1, 75, 4, 33])
+        self.assertEqual(value, 95)
