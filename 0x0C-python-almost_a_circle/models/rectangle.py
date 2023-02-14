@@ -85,10 +85,16 @@ class Rectangle(Base):
         with the `#` character
         """
 
+        for i in range(self.__y):
+            print()
+
         string = ""
         for i in range(self.__height):
             for j in range(self.__width):
-                string += "#"
+                if j == 0:
+                    string += "{}{}".format(' ' * self.__x, '#')
+                else:
+                    string += "#"
             if i != self.__height - 1:
                 string += "\n"
         print(string)
