@@ -92,3 +92,14 @@ class Rectangle(Base):
             if i != self.__height - 1:
                 string += "\n"
         print(string)
+
+    def __str__(self):
+        """
+        Prints a string representation of the
+        Rectangle
+        """
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += "(" + str(self.id) + ") "
+        string += str(self.__x) + "/" + str(self.__y) + " - "
+        string += str(self.__width) + "/" + str(self.__height)
+        return string
