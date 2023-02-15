@@ -23,4 +23,3 @@ class Square(Rectangle):
         string += str(self.x) + "/" + str(self.y) + " - "
         string += str(self.height)
         return string
-
