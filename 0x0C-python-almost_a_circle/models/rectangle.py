@@ -121,3 +121,14 @@ class Rectangle(Base):
         elif kwargs:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """returns a dictionary representation of the Rectangle object"""
+
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+            }
