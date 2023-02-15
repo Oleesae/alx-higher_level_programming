@@ -109,3 +109,14 @@ class Rectangle(Base):
         string += str(self.__x) + "/" + str(self.__y) + " - "
         string += str(self.__width) + "/" + str(self.__height)
         return string
+
+    def update(self, *args):
+        """updates values of the rectangle object"""
+
+        attrs = ["id", "width", "height", "x", "y"]
+
+        if args:
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+
+        
