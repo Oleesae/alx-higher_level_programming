@@ -27,7 +27,7 @@ class Base:
         """Returns a list string representation of a
         dictionary
         """
-        if list_dictionaries is None or len(list_dictionaries) < 1:
+        if list_dictionaries is None or list_dictionaries == []:
             j_str = json.dumps([])
 
         j_str = json.dumps(list_dictionaries)
