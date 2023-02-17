@@ -72,7 +72,7 @@ class Base:
         try:
             with open(filename, 'r', encoding='utf-8') as f:
                 infm = cls.from_json_string(f.read())
-        except:
+        except FileNotFoundError:
             return []
         finally:
             return [cls.create(**val) for val in infm]
