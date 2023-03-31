@@ -63,7 +63,7 @@ class TestRectangle(unittest.TestCase):
             new_rec1 = Rectangle(32, 8, -2)
 
     def test_y_raises(self):
-        """Test for y arg value and type"""
+        """Test for y arg type and value"""
 
         with self.assertRaises(TypeError):
             new_rec = Rectangle(8, 2, 8, "2")
@@ -76,6 +76,8 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             new_rec = Rectangle(-4, 3)
+
+        with self.assertRaises(ValueError):
             new_rec1 = Rectangle(0, 7)
 
     def test_height_gt_than_zero(self):
@@ -83,6 +85,8 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             new_rec = Rectangle(2, -12)
+
+        with self.assertRaises(ValueError):
             new_rec1 = Rectangle(5, 0)
 
 
