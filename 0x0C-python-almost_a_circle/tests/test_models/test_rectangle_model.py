@@ -28,8 +28,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.b.id, self.d.id - 1)
 
     def test_width_height(self):
-        self.assertEqual(self.c.width, 3)
-        self.assertEqual(self.c.height, 2)
+        new_rec = Rectangle(3, 2)
+        self.assertEqual(new_rec.width, 3)
+        self.assertEqual(new_rec.height, 2)
 
     def test_x_arg(self):
         self.assertIsInstance(self.b.x, type(self.b.x))
