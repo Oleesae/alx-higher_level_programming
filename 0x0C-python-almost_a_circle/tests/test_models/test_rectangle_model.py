@@ -26,6 +26,7 @@ class TestRectangle(unittest.TestCase):
     def test_id(self):
         self.assertEqual(self.a.id, self.b.id - 1)
         self.assertEqual(self.b.id, self.d.id - 1)
+        self.assertEqual(self.c.id, 23)
 
     def test_width_height(self):
         new_rec = Rectangle(3, 2)
