@@ -53,27 +53,37 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             new_rec = Rectangle(3, "3")
 
-    def test_x_not_int(self):
-        """Test for x arg if not integer"""
+    def test_x_raises(self):
+        """Test for x arg value and type"""
 
         with self.assertRaises(TypeError):
             new_rec = Rectangle(13, 3, "7")
 
-    def test_y_not_int(self):
-        """Test for y arg if not integer"""
+        with self.assertRaises(ValueError):
+            new_rec1 = Rectangle(32, 8, -2)
+
+    def test_y_raises(self):
+        """Test for y arg value and type"""
 
         with self.assertRaises(TypeError):
             new_rec = Rectangle(8, 2, 8, "2")
+
+        with self.assertRaises(ValueError):
+            new_rec1 = Rectangle(7, 4, 2, -4)
 
     def test_width_gt_than_zero(self):
         """Test width if greater than zero"""
 
         with self.assertRaises(ValueError):
             new_rec = Rectangle(-4, 3)
+            new_rec1 = Rectangle(0, 7)
 
     def test_height_gt_than_zero(self):
         """Test height if greater than zero"""
 
         with self.assertRaises(ValueError):
             new_rec = Rectangle(2, -12)
+            new_rec1 = Rectangle(5, 0)
+
+
     
