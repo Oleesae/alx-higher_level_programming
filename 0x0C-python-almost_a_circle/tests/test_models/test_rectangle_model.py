@@ -134,3 +134,9 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
 
         self.assertEqual(captured_out.getvalue(), expected_output)
+
+    def test_to_dictionay(self):
+        """Tests the to dictionary method"""
+
+        expected = {'id': 23, 'width': 3, 'height': 2, 'x': 7, 'y':6}
+        self.assertEqual(self.c.to_dictionary(), expected)
