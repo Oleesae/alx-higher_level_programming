@@ -195,3 +195,17 @@ class TestRectangle(unittest.TestCase):
         new = Rectangle(2, 8)
         new.update(**{'id': 23, 'width': 13, 'height': 7})
         self.assertEqual(new.height, 7)
+
+    def test_update_kwargs_x(self):
+        """Tests the update kwargs for x"""
+
+        new = Rectangle(2, 8)
+        new.update(**{'id': 23, 'width': 1, 'height': 3, 'x': 5})
+        self.assertEqual(new.x, 5)
+
+    def test_update_kwargs_y(self):
+        """Tests the update kwargs for y"""
+
+        new = Rectangle(5, 8)
+        new.update(**{'id': 34, 'width': 3, 'height': 8, 'x': 8, 'y': 2})
+        self.assertEqual(new.y, 2)

@@ -114,7 +114,6 @@ class Rectangle(Base):
         """updates values of the rectangle object"""
 
         attrs = ["id", "width", "height", "x", "y"]
-
         if args:
             for i in range(len(args)):
                 setattr(self, attrs[i], args[i])
