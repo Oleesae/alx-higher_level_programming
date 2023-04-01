@@ -154,4 +154,24 @@ class TestRectangle(unittest.TestCase):
         self.a.update(44, 5)
         self.assertEqual(self.a.width, 5)
 
+    def test_update_height(self):
+        """Tests the update method for the height value"""
+
+        self.assertEqual(self.a.height, 3)
+        self.a.update(44, 5, 17)
+        self.assertEqual(self.a.height, 17)
+
+    def test_update_x(self):
+        """Tests the update method for the x value"""
+
+        self.assertEqual(self.a.x, 0)
+        self.a.update(44, 5, 17, 5)
+        self.assertEqual(self.a.x, 5)
+
+    def test_update_y(self):
+        """Tests the update method for the y value"""
+
+        self.assertEqual(self.a.y, 0)
+        self.a.update(44, 5, 17, 5, 6)
+        self.assertEqual(self.a.y, 6)
     
