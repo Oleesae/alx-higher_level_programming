@@ -140,3 +140,10 @@ class TestRectangle(unittest.TestCase):
 
         expected = {'id': 23, 'width': 3, 'height': 2, 'x': 7, 'y':6}
         self.assertEqual(self.c.to_dictionary(), expected)
+
+    def test_update_id(self):
+        """Tests the update method for id"""
+
+        self.assertEqual(self.c.id, 23)
+        self.c.update(44)
+        self.assertEqual(self.c.id, 44)
