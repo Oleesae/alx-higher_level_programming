@@ -5,6 +5,8 @@ Unittests for Rectangle class
 
 import unittest
 import os
+import sys
+from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -15,10 +17,10 @@ class TestRectangle(unittest.TestCase):
     """
 
     def setUp(self):
-        self.a = Rectangle(2, 7)
-        self.b = Rectangle(4, 2, 8)
+        self.a = Rectangle(2, 3)
+        self.b = Rectangle(4, 2, 4)
         self.c = Rectangle(3, 2, 7, 6, 23)
-        self.d = Rectangle(13, 16, 2, 8)
+        self.d = Rectangle(3, 6, 2, 2)
 
     def tearDown(self):
         pass
@@ -93,4 +95,42 @@ class TestRectangle(unittest.TestCase):
         """Tests the value of area of rectangle"""
 
         self.assertEqual(self.c.area(), self.c.width * self.c.height)
-    
+
+    def test_str(self):
+        """Tests the str method"""
+
+        str_val = self.c.__str__()
+        self.assertIsInstance(str_val, str)
+
+    def test_display_no_xy(self):
+        """Tests display method without x and y args"""
+
+        expected_output = '##\n##\n##\n'
+        captured_out = StringIO()
+        sys.stdout = captured_out
+        self.a.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_out.getvalue(), expected_output)
+
+    def test_display_x_only(self):
+        """Tests the display method without the y arg"""
+
+        expected_output = "    ####\n    ####\n"
+        captured_out = StringIO()
+        sys.stdout = captured_out
+        self.b.display()
+        sys.stdout = sys.__stdout__
+
+        self.assertEqual(captured_out.getvalue(), expected_output)
+
+    def test_display_with_xy(self):
+        """Test the display method with x and y args"""
+
+        expected_output = "\n\n  ###\n  ###\n"
+        expected_output += "  ###\n  ###\n  ###\n  ###\n"
+        captured_out = StringIO()
+        sys.stdout = captured_out
+        self.d.display()
+        sys.stdout = sys.__stdout__
+
+        self.assertEqual(captured_out.getvalue(), expected_output)
