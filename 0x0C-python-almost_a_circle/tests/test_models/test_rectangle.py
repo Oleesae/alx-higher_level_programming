@@ -209,3 +209,53 @@ class TestRectangle(unittest.TestCase):
         new = Rectangle(5, 8)
         new.update(**{'id': 34, 'width': 3, 'height': 8, 'x': 8, 'y': 2})
         self.assertEqual(new.y, 2)
+
+    def test_create_id(self):
+        """Test for creating an instance with id using the create method"""
+
+        new = Rectangle.create(**{'id': 34})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.width, 1)
+        self.assertEqual(new.height, 1)
+        self.assertEqual(new.x, 0)
+        self.assertEqual(new.y, 0)
+
+    def test_create_width(self):
+        """Test for creating an instance with width using the create method"""
+
+        new = Rectangle.create(**{'id': 34, 'width': 4})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.width, 4)
+        self.assertEqual(new.height, 1)
+        self.assertEqual(new.x, 0)
+        self.assertEqual(new.y, 0)
+
+    def test_create_height(self):
+        """Test for creating an instance with height using the create method"""
+
+        new = Rectangle.create(**{'id': 34, 'width': 4, 'height': 5})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.width, 4)
+        self.assertEqual(new.height, 5)
+        self.assertEqual(new.x, 0)
+        self.assertEqual(new.y, 0)
+
+    def test_create_x(self):
+        """Test for creating an instance with x using the create method"""
+
+        new = Rectangle.create(**{'id': 34, 'width': 4, 'height': 5, 'x': 3})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.width, 4)
+        self.assertEqual(new.height, 5)
+        self.assertEqual(new.x, 3)
+        self.assertEqual(new.y, 0)
+
+    def test_create_y(self):
+        """Test for creating an instance with y using the create method"""
+
+        new = Rectangle.create(**{'id': 34, 'width': 4, 'height': 5, 'x': 2, 'y': 8})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.width, 4)
+        self.assertEqual(new.height, 5)
+        self.assertEqual(new.x, 2)
+        self.assertEqual(new.y, 8)

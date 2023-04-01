@@ -167,34 +167,67 @@ class TestSquare(unittest.TestCase):
     def test_update_kwargs_id(self):
         """Tests the update kwargs for id"""
 
-        new = Rectangle(5, 8)
+        new = Square(5, 8, 4, 2)
+        self.assertEqual(new.id, 2)
         new.update(**{'id': 38})
         self.assertEqual(new.id, 38)
 
-    def test_update_kwargs_width(self):
-        """Tests the update kwargs for width"""
+    def test_update_kwargs_size(self):
+        """Tests the update kwargs for size"""
 
-        new = Rectangle(5, 2)
-        new.update(**{'id': 23, 'width': 13})
+        new = Square(5)
+        self.assertEqual(new.size, 5) 
+        new.update(**{'id': 23, 'size': 13})
         self.assertEqual(new.width, 13)
-
-    def test_update_kwargs_height(self):
-        """Tests the update kwargs for height"""
-
-        new = Rectangle(2, 8)
-        new.update(**{'id': 23, 'width': 13, 'height': 7})
-        self.assertEqual(new.height, 7)
 
     def test_update_kwargs_x(self):
         """Tests the update kwargs for x"""
 
-        new = Rectangle(2, 8)
-        new.update(**{'id': 23, 'width': 1, 'height': 3, 'x': 5})
+        new = Square(2, 8)
+        self.assertEqual(new.x, 8)
+        new.update(**{'id': 23, 'size': 1, 'x': 5})
         self.assertEqual(new.x, 5)
 
     def test_update_kwargs_y(self):
         """Tests the update kwargs for y"""
 
-        new = Rectangle(5, 8)
+        new = Square(5, 8, 6)
+        self.assertEqual(new.y, 6)
         new.update(**{'id': 34, 'width': 3, 'height': 8, 'x': 8, 'y': 2})
         self.assertEqual(new.y, 2)
+
+    def test_create_id(self):
+        """Test for creating an instance with id using the create method"""
+
+        new = Square.create(**{'id': 34})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.size, 1)
+        self.assertEqual(new.x, 0)
+        self.assertEqual(new.y, 0)
+
+    def test_create_size(self):
+        """Test for creating an instance with size using the create method"""
+
+        new = Square.create(**{'id': 34, 'size': 4})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.size, 4)
+        self.assertEqual(new.x, 0)
+        self.assertEqual(new.y, 0)
+
+    def test_create_x(self):
+        """Test for creating an instance with x using the create method"""
+
+        new = Square.create(**{'id': 34, 'size': 4, 'x': 3})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.size, 4)
+        self.assertEqual(new.x, 3)
+        self.assertEqual(new.y, 0)
+
+    def test_create_y(self):
+        """Test for creating an instance with y using the create method"""
+
+        new = Square.create(**{'id': 34, 'size': 4, 'x': 2, 'y': 8})
+        self.assertEqual(new.id, 34)
+        self.assertEqual(new.size, 4)
+        self.assertEqual(new.x, 2)
+        self.assertEqual(new.y, 8)
