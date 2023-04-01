@@ -151,18 +151,18 @@ class TestSquare(unittest.TestCase):
     def test_update_x(self):
         """Tests the update method for the x value"""
 
-        sq = Square(3)
-        self.assertEqual(sq.x, 0)
-        sq.update(44, 5, 17)
-        self.assertEqual(sq.x, 5)
+        sq = Square(3, 4)
+        self.assertEqual(sq.x, 4)
+        sq.update(44, 5, 8)
+        self.assertEqual(sq.x, 8)
 
     def test_update_y(self):
         """Tests the update method for the y value"""
 
-        sq = Square(4)
-        self.assertEqual(sq.y, 0)
-        sq.update(44, 5, 17)
-        self.assertEqual(sq.y, 17)
+        sq = Square(4, 4, 2, 2)
+        self.assertEqual(sq.y, 2)
+        sq.update(44, 5, 17, 7)
+        self.assertEqual(sq.y, 7)
     
     def test_update_kwargs_id(self):
         """Tests the update kwargs for id"""
