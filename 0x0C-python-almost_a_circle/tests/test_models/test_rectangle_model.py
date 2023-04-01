@@ -143,7 +143,15 @@ class TestRectangle(unittest.TestCase):
 
     def test_update_id(self):
         """Tests the update method for id"""
+        new = Rectangle(3, 2)
+        new.update(44)
+        self.assertEqual(new.id, 44)
 
-        self.assertEqual(self.c.id, 23)
-        self.c.update(44)
-        self.assertEqual(self.c.id, 44)
+    def test_update_width(self):
+        """Tests the update method of width property"""
+
+        self.assertEqual(self.a.width, 2)
+        self.a.update(44, 5)
+        self.assertEqual(self.a.width, 5)
+
+    
