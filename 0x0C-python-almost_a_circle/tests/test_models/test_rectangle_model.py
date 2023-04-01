@@ -101,6 +101,7 @@ class TestRectangle(unittest.TestCase):
 
         str_val = self.c.__str__()
         self.assertIsInstance(str_val, str)
+        self.assertEqual(str_val, "[Rectangle] (23) 7/6 - 3/2")
 
     def test_display_no_xy(self):
         """Tests display method without x and y args"""
@@ -114,7 +115,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_display_x_only(self):
         """Tests the display method without the y arg"""
-
         expected_output = "    ####\n    ####\n"
         captured_out = StringIO()
         sys.stdout = captured_out
