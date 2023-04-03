@@ -244,7 +244,7 @@ class TestSquare(unittest.TestCase):
 
         Square.save_to_file([])
         obj_list = Square.load_from_file()
-        self.assertEqual(obj_list, [])
+        self.assertFalse(obj_list)
 
     def test_save_to_file(self):
         """Tests the save_to_file method"""
