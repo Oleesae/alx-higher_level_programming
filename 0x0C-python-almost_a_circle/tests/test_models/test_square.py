@@ -231,3 +231,27 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(new.size, 4)
         self.assertEqual(new.x, 2)
         self.assertEqual(new.y, 8)
+
+    def test_save_to_file_None(self):
+        """Tests the save_to_file method for a None value"""
+
+        Square.save_to_file(None)
+        obj_list = Square.load_from_file()
+        self.assertEqual(obj_list, [])
+
+    def test_save_to_file_empty(self):
+        """Tests the save_to_file method for an empty list"""
+
+        Square.save_to_file([])
+        obj_list = Square.load_from_file()
+        self.assertEqual(obj_list, [])
+
+    def test_save_to_file(self):
+        """Tests the save_to_file method"""
+
+        sq = Square(3, 5, 8 , 2)
+        Square.save_to_file([sq])
+        obj_list = Square.load_from_file()
+        new = obj_list[0]
+        new_dict = new.to_dictionary()
+        self.assertEqual(new_dict, {'id': 2, 'size': 3, 'x': 5, 'y': 8})
