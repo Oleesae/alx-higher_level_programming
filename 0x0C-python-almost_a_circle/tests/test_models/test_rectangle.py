@@ -259,3 +259,32 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(new.height, 5)
         self.assertEqual(new.x, 2)
         self.assertEqual(new.y, 8)
+
+    def test_save_to_file_None(self):
+        """Tests the save_to_file method for a None value"""
+
+        Rectangle.save_to_file(None)
+        obj_list = Rectangle.load_from_file()
+        self.assertEqual(obj_list, [])
+
+    def test_save_to_file_empty(self):
+        """Tests the save_to_file method for an empty list"""
+
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            content = file.read()
+        self.assertEqual("[]", content)
+
+    def test_save_to_file(self):
+        """Tests the save_to_file method"""
+
+        sq = Rectangle(3, 4, 5, 8 , 2)
+        Rectangle.save_to_file([sq])
+        obj_list = Rectangle.load_from_file()
+        new = obj_list[0]
+        new_dict = new.to_dictionary()
+        self.assertEqual(new_dict, {'id': 2, 'width': 3, 'height': 4, 'x': 5, 'y': 8})

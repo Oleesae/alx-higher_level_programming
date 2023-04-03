@@ -242,6 +242,10 @@ class TestSquare(unittest.TestCase):
     def test_save_to_file_empty(self):
         """Tests the save_to_file method for an empty list"""
 
+        try:
+            os.remove("Square.json")
+        except:
+            pass
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             content = file.read()
