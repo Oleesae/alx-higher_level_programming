@@ -32,3 +32,15 @@ class TestBaseInstantiation(unittest.TestCase):
 
     def test_mixed_id(self):
         self.assertEqual(self.b2.id, self.b4.id - 1)
+
+    def test_json_string(self):
+        """Tests the json to string metod"""
+
+        sq = Square(3, 2, 1, 5)
+        sqd = sq.to_dictionary()
+        json_sq = Square.to_json_string([sqd])
+        self.assertIsInstance(sqd, dict)
+        self.assertIsInstance(json_sq, str)
+        self.assertEqual(json_sq, '[{"id": 5, "size": 3, "x": 2, "y": 1}]')
+
+        
