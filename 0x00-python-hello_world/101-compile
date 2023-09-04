@@ -1,5 +1,5 @@
-#!/usr/bin/python3
-import py_compile
+#!/usr/bin/env python3
+import compileall
 
-py_compile.compile($PYFILE)
+compileall.compile_file("$PYFILE")
 
