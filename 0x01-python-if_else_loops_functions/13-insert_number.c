@@ -56,21 +56,7 @@ listint_t *insert_node(listint_t **head, int number)
 		*head = new_node;
 		printf("at beginning at %d\n", i);
 	}
-	else if (i > 0 && i < len)
-	{
 
-		aft = bef->next;
-		new_node->next = aft;
-		bef->next = new_node;
-		printf("in the middle at %d\n",i);
-	}
-	else if (i == len)
-	{
-		printf("at tail at value %d, %d\n",bef->n, new_node->n);
-		
-		bef->next = new_node;
-		
-	}
 
 	return (*head);
 }
