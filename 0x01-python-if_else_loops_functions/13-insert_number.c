@@ -43,7 +43,7 @@ listint_t *insert_node(listint_t **head, int number)
 
 	while (bef->next != NULL)
 	{
-		if (bef->n >= number)
+		if (bef->n > number)
 			break;
 		bef = bef->next;
 		i++;
