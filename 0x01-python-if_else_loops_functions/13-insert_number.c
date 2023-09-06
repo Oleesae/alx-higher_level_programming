@@ -13,50 +13,66 @@ int list_len(listint_t *head);
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *new_node;
-	listint_t *temp;
-	listint_t *prev;
+	listint_t *bef;
+	listint_t *aft;
 	int len, i = 0;
 
+	/** create and populate new node */
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->n = number;
 	new_node->next = NULL;
+
+	/** Check for empty linked list */
 	if (*head == NULL || head == NULL)
 	{
 		*head = new_node;
 		return (new_node);
 	}
 
-	temp = *head;
-	while (temp->next != NULL)
+	/**
+	 * use the bef to traverse the linked list to
+	 * desired position
+	 * use len variable to store the length of the
+	 * linked list
+	 * traverse through the list till index is reached
+	 * and exit loop using break
+	 */
+	bef = *head;
+
+	len = list_len(bef);
+	while (bef->next != NULL)
 	{
-		if (temp->n > new_node->n)
+		if (bef->n > number)
 			break;
-		temp = temp->next;
+		bef = bef->next;
 		i++;
 	}
 
-	prev = *head;
-	len = list_len(prev);
-	if (i == len)
+	if (i == 0)
 	{
-		prev = get_nodeint_at_index(&prev, len);
-		prev->next = new_node;
+		new_node->next = *head;
+		*head = new_node;
+		printf("at beginning at %d\n", i);
 	}
 	else if (i > 0 && i < len)
 	{
-		prev = get_nodeint_at_index(&prev, i - 1);
-		prev->next = new_node;
-		new_node->next = temp;
+
+		aft = bef->next;
+		new_node->next = aft;
+		bef->next = new_node;
+		printf("in the middle at %d\n",i);
 	}
-	else if (i == 0)
+	else if (i == len)
 	{
-		new_node->next = temp;
-		*head = new_node;
+		printf("at tail at value %d, %d\n",bef->n, new_node->n);
+		
+		bef->next = new_node;
+		
 	}
 
-	return (new_node);
+	return (*head);
 }
 
 /**
@@ -70,7 +86,7 @@ listint_t *get_nodeint_at_index(listint_t **head, int index)
 {
 	int i;
 
-	for (i = 0; *head != NULL && i < index; i++)
+	for (i = 1; *head != NULL && i < index; i++)
 	{
 		*head = (*head)->next;
 	}
