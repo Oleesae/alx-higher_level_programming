@@ -27,7 +27,11 @@ int main(void)
 
 
 	insert_node(&head, -3);
-	insert_node(&head, -3);
+	insert_node(&head, 4537);
+	insert_node(&head, 7320);
+	insert_node(&head, 1482);
+	insert_node(&head, 4536);
+	insert_node(&head, -7);
 
 
 	
