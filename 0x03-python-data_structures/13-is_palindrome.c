@@ -65,9 +65,7 @@ int is_palindrome(listint_t **head)
 	}
 
 	if (!split_list)
-	{
 		return (1);
-	}
-	
+
 	return (0);
 }
