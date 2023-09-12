@@ -37,14 +37,14 @@ int is_palindrome(listint_t **head)
 	while (1)
 	{
 		fast = fast->next->next;
-		if (fast->next == NULL)
-		{
-			split_list = slow->next->next;
-			break;
-		}
 		if (fast == NULL)
 		{
-			split_list =  slow->next;
+			split_list = slow->next;
+			break;
+		}
+		if (fast->next == NULL)
+		{
+			split_list =  slow->next->next;
 			break;
 		}
 		slow = slow->next;
