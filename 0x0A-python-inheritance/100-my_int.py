@@ -3,6 +3,7 @@
 MyInt class that inherits from int
 """
 
+
 class MyInt(int):
     """
     Inherits from int class.
