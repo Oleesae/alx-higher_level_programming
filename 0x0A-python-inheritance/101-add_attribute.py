@@ -4,6 +4,7 @@ Defines a function that adds a new attribute to an
 object
 """
 
+
 def add_attribute(obj, att, value):
     """Add a new attribute to an object if possible."""
 
