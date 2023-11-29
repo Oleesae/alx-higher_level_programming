@@ -6,7 +6,12 @@
 		{
 			"name": "alx-low_level_programming",
 			"path": "../../alx-low_level_programming"
+		},
+		{
+			"path": "../../AirBnB_clone"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "AirBnB_clone"
+	}
 }
