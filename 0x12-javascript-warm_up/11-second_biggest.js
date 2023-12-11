@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
+const argv = process.argv;
 
 const argArray = argv.slice(2, argv.length);
 let secLargest;

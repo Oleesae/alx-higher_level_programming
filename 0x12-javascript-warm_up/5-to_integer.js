@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
+const argv = process.argv;
 
 let msg = '';
 if (isNaN(argv[2])) {
