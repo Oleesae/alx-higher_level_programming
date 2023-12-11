@@ -2,16 +2,14 @@
 
 const argv = process.argv;
 
-const argArray = argv.slice(2, argv.length);
 let secLargest;
 if (argv[2] === undefined || argv.length === 3) {
   console.log(0);
 } else {
-  argArray.sort();
+  const argArray = argv
+    .map(Number)
+    .slice(2, argv.length)
+    .sort((a, b) => a - b);
   secLargest = argArray[argArray.length - 2];
-  if (secLargest === argArray[argArray.length - 1]) {
-    secLargest = argArray[argArray.length - 3];
-  }
+  console.log(secLargest);
 }
-
-console.log(secLargest);
