@@ -13,7 +13,6 @@ class Rectangle {
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
         rectangle += 'X';
-
       }
       if (i < this.height - 1) rectangle += '\n';
     }
@@ -21,7 +20,7 @@ class Rectangle {
   }
 
   rotate () {
-    let x = this.width;
+    const x = this.width;
     this.width = this.height;
     this.height = x;
   }
