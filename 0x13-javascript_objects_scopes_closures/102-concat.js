@@ -6,13 +6,13 @@ const fileB = process.argv[3];
 const fileC = process.argv[4];
 
 fs.readFile(fileA, (err, data) => {
-  if (err) {throw err;}
+  if (err) { throw err; }
   const contentFileA = data.toString();
   fs.writeFile(fileC, contentFileA, () => {});
 });
 
 fs.readFile(fileB, (err, data) => {
-  if (err) {throw err;}
+  if (err) { throw err; }
   const contentFileB = data.toString();
   fs.writeFile(fileC, contentFileB, () => {});
 });
