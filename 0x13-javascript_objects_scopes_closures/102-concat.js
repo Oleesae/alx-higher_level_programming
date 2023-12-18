@@ -14,5 +14,5 @@ fs.readFile(fileA, (err, data) => {
 fs.readFile(fileB, (err, data) => {
   if (err) { throw err; }
   const contentFileB = data.toString();
-  fs.writeFile(fileC, contentFileB, () => {});
+  fs.appendFile(fileC, contentFileB, () => {});
 });
