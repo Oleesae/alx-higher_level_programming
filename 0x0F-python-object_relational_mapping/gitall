@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Executes the git add and commit -m and push commands
+#+Usage: ./gitall file/directory commit_message
+
+if [ ! $2 ]
+then
+    if [ ! $1 ]
+    then
+	echo "add comment"
+    else
+	git add . ;
+	git commit -m $1 ;
+	git push;
+    fi
+else
+    git add $1;
+    git commit -m $2;
+    git push;
+fi
