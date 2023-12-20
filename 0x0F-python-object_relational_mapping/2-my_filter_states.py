@@ -13,12 +13,8 @@ if __name__ == "__main__":
         passwd=password, db=name, charset="utf8"
     )
     cur = conn.cursor()
-    cur.execute(
-        """SELECT * FROM states
-        WHERE name = %s
-        ORDER BY states.id ASC;""",
-        (searched,)
-    )
+    query = "SELECT * FROM states WHERE name = {} ORDER BY states.id ASC".format("%s");
+    cur.execute(query, (searched,))
     query_rows = cur.fetchall()
     for state in query_rows:
         print(state)
