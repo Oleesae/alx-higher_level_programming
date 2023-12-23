@@ -20,7 +20,7 @@ if __name__ == "__main__":
     states = session.query(State)
     first = states.first()
     if first:
-        print(f"{first.id}: {first}")
+        print(f"{first.id}: {first.name}")
     else:
         print("Nothing")
     session.close()
