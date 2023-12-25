@@ -9,7 +9,7 @@ if __name__ == "__main__":
     from sqlalchemy import create_engine
     import sys
 
-    host, password, name, search = sys.argv[1:]
+    host, password, name = sys.argv[1:]
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
         .format(host, password, name),
@@ -17,10 +17,10 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = sessionmaker(bind=engine)()
-    query = session.query(State).filter(State.name == search)
-    state = query.first()
-    if state:
+    query = session.query(State)
+    new_state = State(name="Louisiana")
+    session.add(new_state)
+    states = query.all()
+    for state in states.filter(State.name == "Louisiana"):
         print(f"{state.id}")
-    else:
-        print("Not found")
     session.close()
