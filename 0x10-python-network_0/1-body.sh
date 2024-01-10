@@ -1,3 +1,4 @@
 #!/bin/bash
-# Get the response body for a given URL for 200 status code responses.
-curl -sL "$1"
+# a script that prints the body of a successful request
+# and also the content length
+curl -sLf "$1"
