@@ -11,7 +11,7 @@ def main():
     url = sys.argv[1]
     headers = {'email': sys.argv[2]}
 
-    r = requests.get(url, headers=headers)
+    r = requests.post(url, headers=headers)
     print(r.text)
 
 
