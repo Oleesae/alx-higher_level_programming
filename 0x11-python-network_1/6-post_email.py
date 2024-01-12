@@ -9,9 +9,9 @@ def main():
     """Python script that fetches a variable from header
     """
     url = sys.argv[1]
-    headers = {'email': sys.argv[2]}
+    email = {'email': sys.argv[2]}
 
-    r = requests.post(url, headers=headers)
+    r = requests.post(url, email)
     print(r.text)
 
 
