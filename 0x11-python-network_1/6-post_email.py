@@ -12,7 +12,7 @@ def main():
     headers = {'email': sys.argv[2]}
 
     r = requests.get(url, headers=headers)
-    print(r.headers['email'])
+    print(r.text)
 
 
 if __name__ == "__main__":
